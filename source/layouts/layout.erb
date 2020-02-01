@@ -55,7 +55,6 @@ under the License.
       <a href="index.html" class="nav-home-link">
         <div class="nav-home">
           <%= image_tag "logo_small.png" %>
-          <span>Temporal API</span>
         </div>
       </a>
       <br />
@@ -81,10 +80,6 @@ under the License.
       </div>
       <br />
       <br />
-      <ul class="toc-appendage">
-        <li id="temporal_link"><a href="https://temporal.cloud" title="Temporal">Temporal</a></li>
-        <li id="github_link"><a href="<%= current_page.data.github_link %>" title="View on Github" target="_blank">GitHub</a></li>
-      </ul>
       <% if current_page.data.toc_footers %>
         <ul class="toc-footer">
           <% current_page.data.toc_footers.each do |footer| %>
