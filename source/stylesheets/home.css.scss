@@ -1,0 +1,196 @@
+@import 'fonts';
+@import 'normalize';
+@import 'variables';
+
+$full-width: $phone-width + 1;
+
+html, body {
+  font-family: "LLAkkuratWeb-Light", Helmut, Helvetica, Arial, sans-serif;
+  color: #424242;
+}
+
+.header {
+  text-align: center;
+}
+
+.content {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-big {
+  font-size: 60px;
+  width: 100%;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: -60px;
+}
+
+.logo {
+  width: 140px;
+  height: 140px;
+  background-image: url('https://gateway.temporal.cloud/ipfs/QmQ8DTkjxE7emKkfbKxYcaaAeAiiXcSNk7kGhKdstgfAwY');
+  background-size: 100%;
+  margin-top: 15px;
+}
+
+.blocks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  max-width: 1050px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 80px;
+
+  @media (min-width: $full-width) {
+    width: 100%;
+  }
+
+  @media (max-width: $phone-width) {
+    width: 320px;
+  }
+}
+
+.block {
+  min-height: 260px;
+  height: 260px;
+  background-color: #00b2a9;
+  color: #fff;
+  padding: 30px;
+
+  flex-basis: 260px;
+  align-self: auto;
+
+  margin: 15px;
+
+  -o-transition:0.5s;
+  -ms-transition:0.5s;
+  -moz-transition:0.5s;
+  -webkit-transition:0.5s;
+  transition:0.5s;
+
+  h3 {
+    font-weight: bold;
+    font-size: 28px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.5px;
+    text-align: center;
+  }
+
+  &:link, &:visited, &:active {
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #018d85;
+  }
+}
+
+.block-a {
+  background-color: #0A6EB5;
+
+  &:hover {
+    background-color: #075389;
+  }
+}
+
+.block-b {
+  background-color: #4a9cd5;
+
+  &:hover {
+    background-color: #2384C7;
+  }
+}
+
+.footer {
+  width: 80%;
+  height: 90px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  max-width: 1050px;
+
+  .footer-logo {
+    background: url('https://gateway.temporal.cloud/ipfs/QmV534XnFvfPoMDZuvRSF2Q6Xnaevt5WwboQL1SzUwAeYK') no-repeat;
+    width: 137px;
+    height: 35px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-top: 10px;
+
+    @media (min-width: $full-width) {
+      float: left;
+    }
+
+    @media (max-width: $phone-width) {
+      float: none;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+
+  hr {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+
+
+  .footer-links {
+    color: #424242;
+    font-size: 16px;
+    padding: 0;
+
+    a:link, a:visited, a:hover, a:active {
+      text-decoration: none;
+      color: #424242;
+    }
+
+    li {
+      list-style-type: none;
+    }
+
+    @media (min-width: $full-width) {
+      float: right;
+
+      li {
+        display: inline;
+        padding-right: 10px;
+      }
+
+      li:before {
+        content: '\007C\00a0\00a0\00a0';
+      }
+
+      li:first-child:before {
+        content: '';
+      }
+    }
+
+    @media (max-width: $phone-width) {
+      li {
+        display: block;
+        text-align: center;
+        margin-bottom: 1.5em;
+      }
+
+      li:before {
+        content: '';
+      }
+    }
+  }
+}
+
