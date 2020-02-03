@@ -56,17 +56,17 @@ handleLogin = (username, password) => () => {
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>username</b> | 字符串 | The username.
-| <b>password</b> | 字符串 | The associated password.
+| <b>username</b> | 字符串 | 用户名。
+| <b>password</b> | 字符串 | 密码。
 
 ### 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>expire</b> | 日期时间 | Time at which the token expires (24 hours).
-| <b>token</b> | 字符串 | Value of the JWT.
+| <b>expire</b> | 日期时间 | 令牌过期时间（24 小时）。
+| <b>token</b> | 字符串 | 令牌的字符串.
 
-## POST register
+## POST 账号注册
 
 ```go
 Golang code here.
@@ -140,40 +140,42 @@ handleRegister = (username, password, email) => () => {
 
 `https://api.temporal.cloud/v2/auth/register`
 
-Registers your information for the `POST login` call, which is used to generate the JWT (JSON Web Token) we use for API authentication. The field `status` within the `response` object, is used to display the terms and service URL associated with the API, that will change depending on usage of either the production, or development API. The values of `EmailVerificationToken` and `HashedPassword` are scrubbed before the response is sent.
+为`POST login`注册您的用户信息，得到用于验证身份的 JWT (JSON Web Token)。
+
+返回的`response`对象中的`status`函数用于显示条款和服务信息，以及 API 的网络地址，它会根据您使用的是生产还是研发 API 而改变。`EmailVerificationToken` 和 `HashedPassword` 只会返回 `"scrubbed"`.
 
 ### 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>username</b> | 字符串 | Your desired username.
-| <b>password</b> | 字符串 | Your desired password.
-| <b>email_address</b> | 字符串 | An associated e-mail address.
+| <b>username</b> | 字符串 | 您要的用户名。
+| <b>password</b> | 字符串 | 您要的密码。
+| <b>email_address</b> | 字符串 | 您的电子邮件地址。
 
 ### 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>ID</b> | 整数 | The unique ID of your registration.
-| <b>CreatedAt</b> | 日期时间 | Time the account was created.
-| <b>UpdatedAt</b> | 日期时间 | Time the account was last updated.
-| <b>DeletedAt</b> | 日期时间 | Time the account was deleted.
-| <b>Username</b> | 字符串 | Your username.
-| <b>EmailAddress</b> | 字符串 | Your e-mail address.
-| <b>AccountEnabled</b> | 布尔 | Your account status.
-| <b>EmailEnabled</b> | 布尔 | Your e-mail notification status.
-| <b>EmailVerificationToken</b> | 字符串 | Sent via e-mail to confirm association.
-| <b>AdminAccess</b> | 布尔 | Your admin status.
-| <b>HashedPassword</b> | 字符串 | The hash of your password
-| <b>Free</b> | 布尔 | Indicates if the account is free tier 
-| <b>Credits</b> | 整数 | Your starting credits.
-| <b>CustomerObjectHash</b> | 字符串 | IPLD object of your uploads (not yet implemented)
-| <b>IPFSKeyNames</b> | 数组[字符串] | IPFS key names associated with your account.
-| <b>IPFSKeyIDs</b> | 数组[字符串] | IPFS key values associated with your account.
-| <b>IPFSNetworkNames</b> | 数组[字符串] | Private IPFS networks associated with your account.
-| <b>Status</b> | 字符串 | Terms And Service link
+| <b>ID</b> | 整数 | 用户注册号。
+| <b>CreatedAt</b> | 日期时间 | 账号的注册日期时间。
+| <b>UpdatedAt</b> | 日期时间 | 账号的上次更新日期时间。
+| <b>DeletedAt</b> | 日期时间 | 账号被删除的日期时间。
+| <b>Username</b> | 字符串 | 用户名。
+| <b>EmailAddress</b> | 字符串 | 电子邮件地址。
+| <b>AccountEnabled</b> | 布尔 | 账号是否可用。
+| <b>EmailEnabled</b> | 布尔 | 是否打开了邮件通知。
+| <b>EmailVerificationToken</b> | 字符串 | 邮件地址合适码。
+| <b>AdminAccess</b> | 布尔 | 是否有管理员权限。
+| <b>HashedPassword</b> | 字符串 | 密码哈希值。
+| <b>Free</b> | 布尔 | 是否是免费用户。
+| <b>Credits</b> | 整数 | 帐上的积分。
+| <b>CustomerObjectHash</b> | 字符串 | 上传文件集的 IPLD 对象。（功能待实现）
+| <b>IPFSKeyNames</b> | 数组[字符串] | 关联的 IPFS 名称。
+| <b>IPFSKeyIDs</b> | 数组[字符串] | 关联的 IPFS 哈希值。
+| <b>IPFSNetworkNames</b> | 数组[字符串] | 关联的专用 IPFS 网络。
+| <b>Status</b> | 字符串 | 条款和 API 的网络地址。
 
-## POST password change
+## POST 改变密码
 
 ```go
 Golang code here.
@@ -228,14 +230,14 @@ handleChangePassword = (oldPassword, newPassword) => () => {
 
 `https://api.temporal.cloud/v2/account/password/change`
 
-Change the password associated with your account.
+更改您账号的密码
 
 ### 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>old_password</b> | 字符串 | Your old password.
-| <b>new_password</b> | 字符串 | Your desired, new password.
+| <b>old_password</b> | 字符串 | 老密码。
+| <b>new_password</b> | 字符串 | 希望使用的新密码。
 
 ## POST upgrade account
 
@@ -261,9 +263,9 @@ Javascript code here
 
 `https://api.temporal.cloud/v2/account/upgrade`
 
-Used to upgrade your account from the free tier to the non-free tier known as `Paid`. After upgrading you are not allowed to downgrade and this is an irreversible action. Only in rare circumstances wil we allow individuals to downgrade.
+用于将您的帐户从免费层升级到称为`Paid`的非免费层。 升级后，您不能降级，这是不可逆的操作。 只有在极少数情况下，我们才允许个人降级。
 
-## GET credits
+## GET 积分
 
 ```go
 Golang code here.
@@ -310,6 +312,4 @@ xhr.send();
 
 `https://api.temporal.cloud/v2/account/credits/available`
 
-View the amount of credits your account has.
-
-The response is of type <b>double</b>.
+查看您的积分，`response`是一个浮点数。
