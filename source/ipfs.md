@@ -13,8 +13,8 @@ includes:
   - ipfs/ipfs_api
   - ipfs/reverse_proxy
   - ipfs/public_network
-  - ipfs/private_network_management
-  - ipfs/private_network_usage
+#  - ipfs/private_network_management
+#  - ipfs/private_network_usage
   - ipfs/utility
 
 slug: ipfs
