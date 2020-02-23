@@ -1,6 +1,6 @@
-# Recovery
+# 6.0 - Recovery
 
-## POST forgot username
+## 6.1 POST forgot username
 
 ```go
 Golang code here.
@@ -57,13 +57,13 @@ Sends a reminder to the associated e-mail address with the given username. Your 
 Does not require a JWT for authentication. Account must have an activated e-mail address.
 </aside>
 
-### 回应 (200)
+### 6.1.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>email_address</b> | 字符串 | The e-mail address associated with your account.
 
-## POST forgot password
+## 6.2 POST forgot password
 
 ```go
 Golang code here.
@@ -120,13 +120,13 @@ Resets the password for the account with the associated email, sending it via em
 Does not require a JWT for authentication. Account must have an activated e-mail address.
 </aside>
 
-### 回应 (200)
+### 6.2.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>email_address</b> | 字符串 | The e-mail address associated with your account.
 
-## POST forgot email
+## 6.3 POST forgot email
 
 ```go
 Golang code here.

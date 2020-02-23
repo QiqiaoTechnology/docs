@@ -1,10 +1,10 @@
-# Organization Management
+# 5.0 - Organization Management
 
 Temporal enables groups of accounts called Organizations. Instead of each account needing to maintain a credit balance and pay upfront for storage costs, the storage costs for all users is applied towards the organization as an amount owed.
 
 Each user account is allowed to create at most 1 organization. To create an organization you user account must be partner tier. To become a partner account your user account must be manually upgraded by an RTrade team member. Thus user accounts registered underneath an organization are prevented from creating an organization themselves. So dont go trying to game the system for free storage, it just wont happen ;)
 
-## POST new organization
+## 5.1 POST new organization
 
 ```go
 Golang code here.
@@ -31,13 +31,13 @@ Javascript code here.
 
 Creates an organization, and marks the calling user account as the owner. After this you will be unable to create another organization, and you will have full management access to the organization you just created.
 
-### Parameters
+### 5.1.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>name</b> | String | The name of the organization.
 
-## POST register user
+## 5.2 POST register user
 
 ```go
 Golang code here.
@@ -115,7 +115,7 @@ handleRegister = (username, password, email, orgname) => () => {
 
 Registers your information for the `POST login` call, which is used to generate the JWT (JSON Web Token) we use for API authentication. Additionally this user will be rgistered as part of the specified organization, and all storage costs will be applied to the organization. The field `status` within the `response` object, is used to display the terms and service URL associated with the API, that will change depending on usage of either the production, or development API. The values of `EmailVerificationToken` and `HashedPassword` are scrubbed before the response is sent.
 
-### Parameters
+### 5.2.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
@@ -124,7 +124,7 @@ Registers your information for the `POST login` call, which is used to generate 
 | <b>email_address</b> | String | An associated e-mail address.
 | <b>organization_name</b> | String | The organization to register this user under.
 
-### Response (200)
+### 5.2.2 Response (200)
 
 | Field | Type | Description
 |-----------|------|-------------
@@ -147,7 +147,7 @@ Registers your information for the `POST login` call, which is used to generate 
 | <b>IPFSNetworkNames</b> | Array[String] | Private IPFS networks associated with your account.
 | <b>Status</b> | String | Terms And Service link
 
-## POST user uploads
+## 5.3 POST user uploads
 
 ```go
 Golang code here.
@@ -183,7 +183,7 @@ The parameters `page`, and `limit` are optional, and only have an effect when `a
 
 To trigger paginated responses, leave `as_csv` empty, or set it to `false`. To trigger a downloadable csv file containing all the user's uploads, set `as_csv` to `true`.
 
-### Parameters
+### 5.3.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
@@ -194,7 +194,7 @@ To trigger paginated responses, leave `as_csv` empty, or set it to `false`. To t
 | <i>limit</i> | Integer | Maximum number of uploads to return - optional
 
 
-## GET organization
+## 5.4 GET organization
 
 ```go
 Golang code here.
@@ -232,13 +232,13 @@ Javascript code here.
 
 Returns the organization model associated with the accont. Note that this can only be ran by the `UserOwner` of an organization. If an account that is part of an organization which is not the `UserOwner` calls this, an error will be returned.
 
-### Parameters
+### 5.4.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>name</b> | String | The name of the organization.
 
-## GET billing report
+## 5.5 GET billing report
 
 ```go
 Golang code here.
@@ -272,7 +272,7 @@ Returns a billing report of all users, uploads, and currently active storage cos
 
 The idea behind this is that you can stay up to date with the usage of your organization accounts, and not have any surprises when we send you the invoice.
 
-### Parameters
+### 5.5.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------

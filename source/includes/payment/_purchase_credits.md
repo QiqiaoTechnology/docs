@@ -1,6 +1,6 @@
-# Purchase Credits
+# 2.0 - Purchase Credits
 
-## POST request ETH payment
+## 2.1 POST request ETH payment
 
 ```go
 Golang code here.
@@ -82,7 +82,7 @@ handlePurchase = (type, credits, address) => () => {
 
 Request a signed message that can subsequently be used to purchase credits with RTC or ETH, validated through a smart contract.
 
-### Parameters
+### 2.1.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
@@ -90,7 +90,7 @@ Request a signed message that can subsequently be used to purchase credits with 
 | <b>sender_address</b> | String | Ethereum address you will use for payment (`0x7E4A2359c745A982a54653128085eAC69E446DE1`).
 | <b>credit_value</b> | Int | The number of credits you want to purchase.
 
-### Response (200)
+### 2.1.2 Response (200)
 
 | Field | Type | Description
 |-----------|------|-------------
@@ -104,7 +104,7 @@ Request a signed message that can subsequently be used to purchase credits with 
 | <b>s</b> | Array[Int] | Portion of tx signature.
 | <b>v</b> | Int | Portion of tx signature.
 
-## POST confirm ETH payment
+## 2.2 POST confirm ETH payment
 
 ```go
 Golang code here.
@@ -161,14 +161,14 @@ submitPayment = (paymentNumber, txHash) => {
 
 Confirm your eth or rtc payment after sending a transaction on the blockchain.
 
-### Parameters
+### 2.2.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>payment_number</b> | String | The unique number associated with your payment.
 | <b>tx_hash</b> | String | The transaction hash associated with the transaction you sent through Ethereum.
 
-## POST create DASH payment
+## 2.3 POST create DASH payment
 
 ```go
 Golang code here.
@@ -224,13 +224,13 @@ Create a payment request to purchase credits with DASH.
 <b>Note:</b> We utilize <b><a href="https://chainrider.io" target="_blank">ChainRider</a></b> for all DASH payments.
 </aside>
 
-### Parameters
+### 2.3.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>credit_value</b> | String | The amount of credits you want to purchase.
 
-### Parameters
+### 2.3.2 Parameters
 
 | Field | Type | Description
 |-------|------|------------
@@ -238,7 +238,7 @@ Create a payment request to purchase credits with DASH.
 | <b>stripe_email</b> | String | The email you want a receipt forwarded to
 | <b>value_in_cents</b> | String | The value of credits you wish to purchase in cents
 
-## POST create BCH payment
+## 2.4 POST create BCH payment
 
 ```go
 Golang code here.
@@ -268,13 +268,13 @@ Javascript code here
 
 Create a payment request to purchase credits with BCH (Bitcoin Cash). You must send *exactly* the `charge_amount` in a single transaction to the specified deposit address. If you have enabled email notifications, you will receive an email when your payment is confirmed. Depending on the number of pending BCH payments being processed, it may take up to three hours. If your payment hasn't been confirmed within 24 hours, please send us an email indicating your username, and the payment number for the payment you are having troubles with.
 
-### Parameters
+### 2.4.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>credit_value</b> | String | The amount of credits you want to purchase.
 
-## POST confirm BCH payment
+## 2.5 POST confirm BCH payment
 
 ```go
 Golang code here.
@@ -303,14 +303,14 @@ Javascript code here
 
 Confirm your BCH payment by submitting the transaction hash, triggering processing of your payment.
 
-### Parameters
+### 2.5.1 
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>tx_hash</b> | String | The transaction hash of the payment
 | <b>payment_number</b> | Int | The payment number this transaction is for
 
-## POST create stripe payment
+## 2.6 POST create stripe payment
 
 ```go
 Golang code here
@@ -339,7 +339,7 @@ Calls the Temporal backend to process, and place a charge against a credit card 
 <b>Note:</b> We utilize <b><a href="https://stripe.com/" target="_blank">Stripe</a></b> for all credit card payments.
 </aside>
 
-## GET payment status
+## 2.7 GET payment status
 
 ```go
 Golang code here.
@@ -366,7 +366,7 @@ Javascript code here.
 
 Used to get the status of a particular payment id
 
-### Parameters
+### 2.7.1 Parameters
 
 | Field | Type | Description
 |-------|------|-------------

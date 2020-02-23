@@ -1,10 +1,10 @@
-# ENS Management
+# 3.0 - ENS Management
 
 This API allows you to manage your ENS subdomain under `ipfstemporal.eth`. All subdomain names correspond to your username, so if your username is `bonedaddy` your subdomain would be `bonedaddy.ipfstemporal.eth`.
 
 Once you have claimed your name, and updated it with a content hash, you can resolve your website on services like `.eth.link`. So for example lets say we have published a content hash under `bonedaddy.ipfstemporal.eth`, we could navigate to `https://bonedaddy.ipfstemporal.eth.link` and you are accessing a decentralized IPFS hosted website, resolved with ENS records!!
 
-## POST claim
+## 3.1 POST claim
 
 ```go
 Golang code here.
@@ -35,7 +35,7 @@ Claims your ENS subdomain, allow you to update its content hash, and resolve it 
   2) Register step 2
   3) Set resolve
 
-## POST update
+## 3.2 POST update
 
 ```go
 Golang code here.

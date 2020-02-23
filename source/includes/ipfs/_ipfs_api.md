@@ -1,4 +1,4 @@
-# IPFS API
+# 1.0 - IPFS API
 
 使用 IPFS API，您可以操作IPFS网络。
 本节提供有关公共 IPFS 网络的使用信息。
@@ -15,15 +15,15 @@
 
 * https://api.temporal.cloud
 
-## IPFS HTTP API
+## 1.1 IPFS HTTP API
 
 我们的 IPFS HTTP API 反向代理服务让您可以用任何语言直接与IPFS节点API通信。对该API有命令白名单。要查看所有有效命令的列表，请在[gist](https://gist.github.com/bonedaddy/55be1cf00e8ffafff6e663c198bf6482)上查阅更新。
 
 该端点与大多数 IPFS HTTP API 编译库兼容，例如[js-ipfs-http-client](https://github.com/ipfs/js-ipfs-http-client)。如果您想使用`go-ipfs-api`，我们维护了一个[叉](https://github.com/RTradeLtd/go-ipfs-api)，允许您在API调用中插入身份验证标头。
 
-要访问此功能，请将您的客户端指向`https://api.ipfs.temporal.cloud`
+要访问此功能，请将您的客户端指向`https://api.ipfs.temporal.cloud`。
 
-## 身份验证
+## 1.2 身份验证
 
 七巧云使用 JSON Web Tokens 进行身份验证，可通过`POST login`来访问。
 
@@ -36,7 +36,7 @@
   超过24小时则需要从新<b><a href="/account.html#post-login"> 登陆</a></b>
 </aside>
 
-## 通用错误
+## 1.3 通用错误
 
 错误代码通常符合以下要求
 
@@ -50,7 +50,7 @@
 <b> 500 </b> |服务器错误 -- 在处理期间出现意外错误时返回
 
 
-## 参数验证（400错误代码）
+## 1.4 参数验证（400错误代码）
 
 ```json
 {
@@ -66,10 +66,10 @@
 
 服务对接受的所有参数都进行验证。 如果验证失败，触发触发状态为`400`的错误响应。 响应主体将是一个JSON对象，其中包括一条消息以及未通过验证的参数列表。
 
-## 保留时间
+## 1.5 保留时间
 
 保留时间控制节点对文件的固定保存时间。 免费用户的最大时限是1个月，其他用户最长2年。
 
-## 上传大小
+## 1.6 上传大小
 
 上载一般文件时，所有用户的文件最大支持2GB。 如果使用文件加密，免费用户最大275MB，其他用户还是2GB。

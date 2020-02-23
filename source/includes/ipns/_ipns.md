@@ -1,6 +1,6 @@
-# IPNS
+# 2.0 - IPNS
 
-## POST 发布记录
+## 2.1 POST 发布记录
 
 ```go
 Golang code here.
@@ -59,7 +59,7 @@ handlePublicIPNS = (hash, lifetime, ttl, key, resolve) => () => {
 
 将IPNS记录发布到公共网络。
 
-### 参数
+### 2.1.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -69,7 +69,7 @@ handlePublicIPNS = (hash, lifetime, ttl, key, resolve) => () => {
 | <b>key</b> | 字符串 | IPFS 名称。
 | <b>resolve</b> | 布尔值 | 是否解析IPNS记录。
 
-## POST IPNS 固定
+## 2.2 POST IPNS 固定
 
 ```go
 Golang code here
@@ -100,7 +100,7 @@ Javascript code here
 您需要为`ipns_path`提供一个类似于`/ipns/docs.api.temporal.cloud`的路径。
 </aside>
 
-### 参数
+### 2.2.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -108,7 +108,7 @@ Javascript code here
 | <b>hold_time</b> | 整数 | 解析的哈希值需要的固定月数
 
 
-## GET 记录
+## 2.3 GET 记录
 
 ```go
 Golang code here.
@@ -191,7 +191,7 @@ xhr.send();
 
 列出您已发布到公用和专用网络的所有IPNS记录。
 
-### 回应 (200)
+### 2.3.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------

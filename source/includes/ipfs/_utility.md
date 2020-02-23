@@ -1,6 +1,6 @@
-# 功能应用
+# 3.0 - 功能应用
 
-## POST 下载文件
+## 3.1 POST 下载文件
 
 ```go
 Golang code here.
@@ -62,14 +62,14 @@ handleDownload = (ipfsHash, networkName) => () => {
 从专用网络下载文件时，请确保网络可以使用。
 </aside>
 
-### 参数
+### 3.1.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>network_name</b> | 字符串| 专用网络名称（可选）
 | <b>decrypt_key</b> | 字符串| 解密密码（可选）
 
-## POST 束移
+## 3.2 POST 束移
 
 ```go
 Golang code here.
@@ -127,7 +127,7 @@ handleBeam = (sourceNetwork, destinationNetwork, hash, passphrase) => () => {
 
 在两个不同的专用IPFS网络之间传输内容。
 
-### 参数
+### 3.2.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------

@@ -1,6 +1,6 @@
-# Spend Credits
+# 3.0 - Spend Credits
 
-## POST calculate file cost
+## 3.1 POST calculate file cost
 
 ```go
 Golang code here.
@@ -57,14 +57,14 @@ handleCalculateFileCost = (file, holdTime) => {
 
 Returns the cost (in credits) for storing a given file. The return value is of type <b>double</b>.
 
-### Parameters
+### 3.1.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------
 | <b>file</b> | File (Blob) | The file to upload.
 | <b>hold_time</b> | Int | Number of months to store the file.
 
-## GET pin cost
+## 3.2 GET pin cost
 
 ```go
 Golang code here.
@@ -121,7 +121,7 @@ handleGetPinCost = (hash, holdTime) => () => {
 
 Returns the cost (in credits) for pinning a given IPFS Hash. The return value is of type <b>double</b>.
 
-### Parameters
+### 3.2.1 Parameters
 
 | Field | Type | Description
 |-----------|------|-------------

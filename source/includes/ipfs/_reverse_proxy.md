@@ -1,4 +1,4 @@
-# IPFS HTTP API 代理服务
+# 2.0 - IPFS HTTP API 代理服务
 
 IPFS HTTP API 反向代理使用内部开发的专门针对 IPFS HTTP API 定制的代理解决方案。它与所有 IPFS HTTP API 库兼容，只要它们使您能够将七巧云生成的JWT插入身份验证标头中即可，因为它使用与七巧云 HTTP API 相同的身份验证方法。
 
@@ -15,7 +15,7 @@ IPFS HTTP API 反向代理使用内部开发的专门针对 IPFS HTTP API 定制
 
 任何涉及读取数据的API均不受速率限制，您可以随意使用它们。为了提高性能，数据读取通过缓存系统进行。如果要跳过缓存系统接收未缓存的响应，请将`Cache-Control`标头设置为`"no-store"`。
 
-## 示例代码
+## 2.1 示例代码
 
 ```go
 package main

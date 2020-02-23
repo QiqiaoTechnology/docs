@@ -1,6 +1,6 @@
-# 用户管理
+# 2.0 - 用户管理
 
-## POST 登录
+## 2.1 POST 登录
 
 ```go
 Golang code here.
@@ -52,21 +52,21 @@ handleLogin = (username, password) => () => {
 验证提供的用户名和密码，以生成用于身份验证的 JSON Web Token（JWT）。
 该令牌的有效期为24小时，之后您需要生成一个新令牌。
 
-### 参数
+### 2.1.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>username</b> | 字符串 | 用户名。
 | <b>password</b> | 字符串 | 密码。
 
-### 回应 (200)
+### 2.1.2 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>expire</b> | 日期时间 | 令牌过期时间（24 小时）。
 | <b>token</b> | 字符串 | 令牌的字符串.
 
-## POST 账号注册
+## 2.2 POST 账号注册
 
 ```go
 Golang code here.
@@ -144,7 +144,7 @@ handleRegister = (username, password, email) => () => {
 
 返回的`response`对象中的`status`函数用于显示条款和服务信息，以及 API 的网络地址，它会根据您使用的是生产还是研发 API 而改变。`EmailVerificationToken` 和 `HashedPassword` 只会返回 `"scrubbed"`.
 
-### 参数
+### 2.2.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -152,7 +152,7 @@ handleRegister = (username, password, email) => () => {
 | <b>password</b> | 字符串 | 您要的密码。
 | <b>email_address</b> | 字符串 | 您的电子邮件地址。
 
-### 回应 (200)
+### 2.2.2 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -175,7 +175,7 @@ handleRegister = (username, password, email) => () => {
 | <b>IPFSNetworkNames</b> | 数组[字符串] | 关联的专用 IPFS 网络。
 | <b>Status</b> | 字符串 | 条款和 API 的网络地址。
 
-## POST 改变密码
+## 2.3 POST 改变密码
 
 ```go
 Golang code here.
@@ -232,14 +232,14 @@ handleChangePassword = (oldPassword, newPassword) => () => {
 
 更改您账号的密码
 
-### 参数
+### 2.3.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>old_password</b> | 字符串 | 老密码。
 | <b>new_password</b> | 字符串 | 希望使用的新密码。
 
-## POST upgrade account
+## 2.4 POST upgrade account
 
 ```go
 Golang code here.
@@ -265,7 +265,7 @@ Javascript code here
 
 用于将您的帐户从免费层升级到称为`Paid`的非免费层。 升级后，您不能降级，这是不可逆的操作。 只有在极少数情况下，我们才允许个人降级。
 
-## GET 积分
+## 2.5 GET 积分
 
 ```go
 Golang code here.

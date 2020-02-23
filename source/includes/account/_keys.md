@@ -1,6 +1,6 @@
-# IPFS Keys
+# 4.0 - IPFS Keys
 
-## POST generate ipfs key
+## 4.1 POST generate ipfs key
 
 ```go
 Golang code here.
@@ -59,7 +59,7 @@ Create an IPFS key with the given parameters.
 
 <aside class="warning"><b>Private keys created are only usable on public IPFS networks. For private networks please use the direct IPFS API through delegator</b></aside>
 
-### 参数
+### 4.1.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -67,7 +67,7 @@ Create an IPFS key with the given parameters.
 | <b>key_size</b> | 整数 | The size of the key. `RSA` accepts `2048`, `3072`, or `4096` while `ED25519` only accepts `256`.
 | <b>key_name</b> | 字符串 | The name of the key.
 
-## GET export ipfs key
+## 4.2 GET export ipfs key
 
 ```go
 Golang code here.
@@ -129,19 +129,19 @@ Exports the mnemonic phrase associated with a given key.
 
 <aside class="warning">Mnemonic phrases for RSA keys are extremely large and can exceed 1,000 words.</aside>
 
-### 参数
+### 4.2.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>name</b> | 字符串 | Name of the key to export.
 
-### 回应 (200)
+### 4.2.2 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>response</b> | 数组[字符串] | An array of all words in the mnemonic phrase.
 
-## GET ipfs keys
+## 4.3 GET ipfs keys
 
 ```go
 Golang code here.
@@ -210,7 +210,7 @@ Retrieve all IPFS keys generated through Temporal.
 
 <aside class="warning">Note that <b>key_ids</b> and <b>key_names</b> mirror each other; the first element in <b>key_ids</b> corresponds to the first element in <b>key_names</b>.</aside>
 
-### 回应 (200)
+### 4.3.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------

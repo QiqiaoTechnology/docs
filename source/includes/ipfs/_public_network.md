@@ -1,6 +1,4 @@
-## 公共网络 - 使用方法
-
-## POST上传文件
+## 2.2 POST上传文件
 
 ```go
 Golang code here.
@@ -58,21 +56,21 @@ handleUpload = (file, holdtime) => {
 
 得到的回应是可公开访问的IPFS哈希值。
 
-### 参数
+### 2.2.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>file</b> | 文件（blob）| 您打算上传的文件。
 | <b>hold_time</b> | 整数 | 固定文件的月数。
 
-### 可选参数
+### 2.2.2 可选参数
 
 | 函数 | 类型 | 描述
 |-------|------|-------------
 | <b>passphrase</b>| 字符串 | 用于加密上传的可选参数。
 | <b>hash_type</b> | 字符串 | 指定要使用的 multihash 哈希公式，例如 sha3-256
 
-## POST 哈希固定
+## 2.3 POST 哈希固定
 
 ```go
 Golang code here.
@@ -126,7 +124,7 @@ handlePinFile = (ipfsHash, holdTime) => () => {
 
 通过七巧云固定IPFS哈希，存储指定的月份数。 当您希望永久存储IPFS上已经存在的内容并保证在指定的持续时间内可用时，可以使用此功能。
 
-### 参数
+### 2.3.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -134,7 +132,7 @@ handlePinFile = (ipfsHash, holdTime) => () => {
 | <b>hold_time</b> | 整数 | 固定哈希值的月数。
 | <b>file_name</b> | 字符串 | 可选的文件名，用于命名固定。
 
-## POST 增加固定时间
+## 2.4 POST 增加固定时间
 
 ```go
 Golang code here.
@@ -161,7 +159,7 @@ Javascript code here
 
 用于将您现有的 IPFS 固定时间延长至指定的月份数。 免费用户的总固定时间只能是1个月（包括延期后），而付费用户为2年（包括延期后）
 
-### 参数
+### 2.4.1 参数
 
 | 领域 | 类型 | 描述
 |-----------|------|-------------
@@ -169,7 +167,7 @@ Javascript code here
 | <b>hold_time</b> | 整数 | 要固定的月数。
 
 
-## POST pubsub
+## 2.5 POST pubsub
 
 ```go
 Golang code here.
@@ -228,20 +226,20 @@ handlePubSub = (message, topic) => () => {
 
 将消息发布到指定的 PubSub 主题。
 
-### 参数
+### 2.5.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>message</b> | 字符串 | 要发布的消息。
 
-### 回应（200）
+### 2.5.2 回应（200）
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>message</b> | 字符串 | 您发布的消息。
 | <b>topic</b> | 字符串 | 您发布到的主题。
 
-## GET object stats
+## 2.6 GET object stats
 
 ```go
 Golang code here.
@@ -300,7 +298,7 @@ handleObject = (hash) => () => {
 
 检索一个 IPFS 哈希的信息。
 
-### 回应 (200)
+### 2.6.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
@@ -311,7 +309,7 @@ handleObject = (hash) => () => {
 | <b>LinksSize</b> | Int | The ...
 | <b>NumLinks</b> | Int | The ...
 
-## GET dag
+## 2.7 GET dag
 
 ```go
 Golang code here.
@@ -437,7 +435,7 @@ handleDAG = (hash) => () => {
 
 读取一个CID的IPLD对象。
 
-### 回应 (200)
+### 2.7.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------

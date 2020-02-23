@@ -1,6 +1,6 @@
-# Utility
+# 7.0 - Utility
 
-## GET username from token
+## 7.1 GET username from token
 
 ```go
 Golang code here.
@@ -51,7 +51,7 @@ xhr.send(data);
 Returns the username associated with the current token (for validation purposes).
 
 
-## GET refreshed auth token
+## 7.2 GET refreshed auth token
 
 ```go
 Golang code here.
@@ -103,7 +103,7 @@ This call can be used to re-authenticate with the API without needing to provide
 
 The response to this call contains a new token that may be used instead of your current token. This newly generated token is valid for another 24 hours.
 
-## GET usage data
+## 7.3 GET usage data
 
 ```go
 Golang code here.

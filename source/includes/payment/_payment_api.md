@@ -1,4 +1,4 @@
-# Payment API
+# 1.0 - Payment API
 
 This section offers Payment functionality for purchasing and spending credits.
 
@@ -14,7 +14,7 @@ Should you wish to access the production API  use the following url:
 
 * https://api.temporal.cloud
 
-## Authentication
+## 1.1 Authentication
 
 Temporal uses JSON Web Tokens for authentication, accessed through the `POST login` call.
 
@@ -25,7 +25,7 @@ Throughout the code examples in this documentation, you will see `<JWT>` which r
 </aside>
 
 
-## General Errors
+## 1.2 General Errors
 
 Except for 400 responses unique to an API call, error codes generally conform to the following:
 
@@ -41,7 +41,7 @@ Error Code | Meaning
 In some cases, calls will return a `200` code as generally expected, but will not successfully execute the command.
 In this case, we will specify the particular conditions this could occur for a given API call.
 
-## Validation (400 Error Code)
+## 1.3 Validation (400 Error Code)
 
 ```json
 {
