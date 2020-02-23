@@ -1,6 +1,6 @@
 # 4.0 - IPFS Keys
 
-## 4.1 POST generate ipfs key
+## 4.1 POST 生成 ipfs 密钥
 
 ```go
 Golang code here.
@@ -55,19 +55,20 @@ handleKeyGenerate = (keyName, keyType, keySize) => () => {
 
 `https://api.temporal.cloud/v2/account/key/ipfs/new`
 
-Create an IPFS key with the given parameters.
+使用提供的参数创建一个IPFS密钥。
 
-<aside class="warning"><b>Private keys created are only usable on public IPFS networks. For private networks please use the direct IPFS API through delegator</b></aside>
+<aside class=“warning”><b>创建的私钥仅在公共IPFS网络上可用。对于专用网络，请通过delegator使用直接IPFS API</b></aside> 
+
 
 ### 4.1.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>key_type</b> | 字符串 | The type of the key, either `RSA` or `ED25519`.
-| <b>key_size</b> | 整数 | The size of the key. `RSA` accepts `2048`, `3072`, or `4096` while `ED25519` only accepts `256`.
-| <b>key_name</b> | 字符串 | The name of the key.
+| <b>key_type</b> | 字符串 | 密钥的类型，`RSA` 或 `ED25519`。
+| <b>key_size</b> | 整数 | 密钥的大小。 `RSA` 可选择 `2048`, `3072`, 或 `4096` 而 `ED25519` 只能选择 `256`.
+| <b>key_name</b> | 字符串 | 密钥的名称。
 
-## 4.2 GET export ipfs key
+## 4.2 GET 导出 ipfs 密钥
 
 ```go
 Golang code here.
@@ -125,23 +126,23 @@ handleKeyExport = (keyName) => () => {
 
 `https://api.temporal.cloud/v2/account/key/export/:name`
 
-Exports the mnemonic phrase associated with a given key.
+使用助记短语导出密钥。
 
-<aside class="warning">Mnemonic phrases for RSA keys are extremely large and can exceed 1,000 words.</aside>
+<aside class=“warning”>RSA密钥的助记符短语非常大，可以超过1000个单词。</aside>
 
 ### 4.2.1 参数
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>name</b> | 字符串 | Name of the key to export.
+| <b>name</b> | 字符串 |导出密钥的名称。
 
 ### 4.2.2 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>response</b> | 数组[字符串] | An array of all words in the mnemonic phrase.
+| <b>response</b> | 数组[字符串] | 助记短语。
 
-## 4.3 GET ipfs keys
+## 4.3 GET 读取 ipfs 密钥
 
 ```go
 Golang code here.
@@ -206,13 +207,13 @@ xhr.send();
 
 `https://api.temporal.cloud/v2/account/key/ipfs/get`
 
-Retrieve all IPFS keys generated through Temporal.
+检索使用七巧生成的所有IPFS密钥。
 
-<aside class="warning">Note that <b>key_ids</b> and <b>key_names</b> mirror each other; the first element in <b>key_ids</b> corresponds to the first element in <b>key_names</b>.</aside>
+<aside class=“warning”>请注意：<b>key_ids</b>和<b>key_names</b>相互镜像； <b>key_ids</b>中的第一个元素对应于<b>key_names</b>中的第一个元素</asid
 
 ### 4.3.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>key_ids</b> | IPFS Hash | The hash of a key.
-| <b>key_names</b> | 字符串 | The name of a key.
+| <b>key_ids</b> | IPFS Hash | 密钥的id。
+| <b>key_names</b> | 字符串 | 密钥的名称。
