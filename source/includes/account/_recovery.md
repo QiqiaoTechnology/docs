@@ -1,6 +1,6 @@
-# 6.0 - 恢复
+# 3.0 - 恢复
 
-## 6.1 POST 忘记用户名
+## 3.1 POST 忘记用户名
 
 ```go
 Golang code here.
@@ -57,13 +57,13 @@ handleForgotUsername = (email) => () => {
 不需要JWT进行身份验证，但是帐户必须有激活的电子邮件地址。
 </aside>
 
-### 6.1.1 回应 (200)
+### 3.1.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>email_address</b> | 字符串 | 与您的帐户关联的电子邮件地址。
 
-## 6.2 POST 忘记密码
+## 3.2 POST 忘记密码
 
 ```go
 Golang code here.
@@ -120,13 +120,13 @@ handleForgotPassword = (email) => () => {
 将提醒发送到用户的电子邮件地址。您的帐户必须有激活的电子邮件地址才能执行此调用。
 </aside>
 
-### 6.2.1 回应 (200)
+### 3.2.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
 | <b>email_address</b> | 字符串 | The e-mail address associated with your account.
 
-## 6.3 POST 忘记邮件地址
+## 3.3 POST 忘记邮件地址
 
 ```go
 Golang code here.
