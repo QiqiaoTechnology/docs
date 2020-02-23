@@ -1,6 +1,6 @@
-# 6.0 - Recovery
+# 6.0 - 恢复
 
-## 6.1 POST forgot username
+## 6.1 POST 忘记用户名
 
 ```go
 Golang code here.
@@ -51,19 +51,19 @@ handleForgotUsername = (email) => () => {
 
 `https://api.temporal.cloud/v2/forgot/username`
 
-Sends a reminder to the associated e-mail address with the given username. Your account must have an activated e-mail address for this call to execute.
+将提醒发送到用户的电子邮件地址。您的帐户必须有激活的电子邮件地址才能执行此调用。
 
 <aside class="success">
-Does not require a JWT for authentication. Account must have an activated e-mail address.
+不需要JWT进行身份验证，但是帐户必须有激活的电子邮件地址。
 </aside>
 
 ### 6.1.1 回应 (200)
 
 | 函数 | 类型 | 描述
 |-----------|------|-------------
-| <b>email_address</b> | 字符串 | The e-mail address associated with your account.
+| <b>email_address</b> | 字符串 | 与您的帐户关联的电子邮件地址。
 
-## 6.2 POST forgot password
+## 6.2 POST 忘记密码
 
 ```go
 Golang code here.
@@ -114,10 +114,10 @@ handleForgotPassword = (email) => () => {
 
 `https://api.temporal.cloud/v2/forgot/password`
 
-Resets the password for the account with the associated email, sending it via email.
+重置电子邮件地址关联的帐户的密码，并通过电子邮件发送。
 
 <aside class="success">
-Does not require a JWT for authentication. Account must have an activated e-mail address.
+将提醒发送到用户的电子邮件地址。您的帐户必须有激活的电子邮件地址才能执行此调用。
 </aside>
 
 ### 6.2.1 回应 (200)
@@ -126,7 +126,7 @@ Does not require a JWT for authentication. Account must have an activated e-mail
 |-----------|------|-------------
 | <b>email_address</b> | 字符串 | The e-mail address associated with your account.
 
-## 6.3 POST forgot email
+## 6.3 POST 忘记邮件地址
 
 ```go
 Golang code here.
@@ -178,4 +178,4 @@ handleForgotEmail => () => {
 
 `https://api.temporal.cloud/v2/forgot/email`
 
-Returns the e-mail address associated with the JWT supplied.
+返回与提供的JWT关联的电子邮件地址。

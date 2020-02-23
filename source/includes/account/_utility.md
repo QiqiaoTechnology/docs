@@ -1,6 +1,6 @@
-# 7.0 - Utility
+# 7.0 - 应用
 
-## 7.1 GET username from token
+## 7.1 GET 令牌中到用户名
 
 ```go
 Golang code here.
@@ -48,10 +48,9 @@ xhr.send(data);
 
 `https://api.temporal.cloud/v2/account/token/username`
 
-Returns the username associated with the current token (for validation purposes).
+返回与当前令牌关联的用户名（用于验证目的）。
 
-
-## 7.2 GET refreshed auth token
+## 7.2 GET 刷新令牌
 
 ```go
 Golang code here.
@@ -99,11 +98,11 @@ xhr.send(data);
 
 `https://api.temporal.cloud/v2/auth/refresh`
 
-This call can be used to re-authenticate with the API without needing to provide a username and password, however it must be done within the lifetime of your current JWT.
+此调用可用于使用API跟新验证，而无需提供用户名和密码，但是必须在当前JWT的生存期内完成。
 
-The response to this call contains a new token that may be used instead of your current token. This newly generated token is valid for another 24 hours.
+对此调用的响应包含一个新令牌，可以使用它代替当前令牌。此新生成的令牌在24小时内有效。
 
-## 7.3 GET usage data
+## 7.3 GET 读取使用数据
 
 ```go
 Golang code here.
@@ -143,4 +142,4 @@ Javascript code here
 
 `https://api.temporal.cloud/v2/account/usage`
 
-This allows returning the users current data usage information
+返回用户当前的数据使用信息 。
