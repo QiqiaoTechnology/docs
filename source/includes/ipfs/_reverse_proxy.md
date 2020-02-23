@@ -15,7 +15,7 @@ IPFS HTTP API 反向代理使用内部开发的专门针对 IPFS HTTP API 定制
 
 任何涉及读取数据的API均不受速率限制，您可以随意使用它们。为了提高性能，数据读取通过缓存系统进行。如果要跳过缓存系统接收未缓存的响应，请将`Cache-Control`标头设置为`"no-store"`。
 
-## 示例代码
+## Example
 
 ```go
 package main
